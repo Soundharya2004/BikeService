@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.firststep-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw; /* Full width of the viewport */
+    position: relative;
+    overflow: auto; /* Allow scrolling if needed */
+}
+
+.firststep-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/form.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: 0;
+}
+
+.firststep-form-container {
+    position: relative;
+    z-index: 1;
+    width: 90%; /* Adjusted to fit within the viewport */
+    max-width: 900px; /* Maximum width for better layout */
+    margin-top: 30px;
+    padding: 40px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.close-option {
+    position: absolute;
+    top: 15px; /* Adjusted position */
+    right: 15px; /* Adjusted position */
+    font-size: 0.9rem; /* Smaller font size */
+    color: #333;
+    cursor: pointer;
+    z-index: 2;
+    background: #fff;
+    padding: 3px 7px; /* Smaller padding */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.close-option:hover {
+    background: #f0f0f0;
+}
+
+.firststep-heading {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+.firststep-label {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.firststep-input {
+    font-size: 1rem;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.firststep-btn {
+    background-color: red;
+    color: #fff;
+    font-size: 1rem;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.firststep-btn:hover {
+    background-color: rgb(175, 43, 43);
+    color: #fff;
+}

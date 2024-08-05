@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  background-color: #ECEFF1; /* Snowy gray background color */
+}
+
+.login-image {
+  flex: 1;
+  background-image: url('../images/login.jpg'); /* Background image for the left section */
+  background-size: cover;
+  background-position: center;
+}
+
+.login-form-container {
+  flex: 1;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.3); /* Slightly opaque background for glassmorphism */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Visible border */
+  border-radius: 10px; /* Border radius */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Subtle shadow for depth */
+  backdrop-filter: blur(8px); /* Blur effect for glassmorphism */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the form vertically */
+  align-items: center; /* Center the form horizontally */
+}
+
+.login-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: darkblue; /* Change the heading color to dark blue */
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px; /* Space between inputs */
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  color: #f5efef;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%; /* Make button width 100% to center it */
+}
+
+.btn-primary:hover {
+  background-color: #4d77a6;
+}
+
+.login-info-text {
+  font-size: 0.8rem; /* Smaller text size */
+  margin-top: 10px;
+  color: #555;
+  text-align: center; /* Center align the text */
+}
+
+.login-link {
+  color: #0056b3;
+  text-decoration: underline;
+  cursor: pointer;
+}

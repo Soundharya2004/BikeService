@@ -1,0 +1,61 @@
+.EditProduct-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set height to 100% of the viewport height for vertical centering */
+    background-color: #f0f0f0; /* Background color */
+}
+
+.EditProduct-formContainer {
+    position: relative; /* Position relative for absolute positioning of close button */
+    width: 600px; /* Adjust width as per your design */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow for depth */
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Size of the close icon */
+    color: #dc3545; /* Color of the close icon */
+    position: absolute; /* Positioning */
+    top: 10px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.close-button:hover {
+    color: #c82333; /* Darker color on hover */
+}
+
+/* Button styles */
+.EditProduct-btnPrimary {
+    background-color: #003366; /* Dark blue color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.EditProduct-btnPrimary:hover {
+    background-color: #002244; /* Darker blue on hover */
+}
+.btn-close {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Size of the close button */
+    color: #dc3545; /* Color of the close button */
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.btn-close:hover {
+    color: #c82333; /* Darker shade on hover */
+}

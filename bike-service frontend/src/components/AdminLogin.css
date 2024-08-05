@@ -1,0 +1,140 @@
+.admin-login-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    background-color: #f8f9fa; /* Light background color */
+}
+
+.admin-login-image {
+    flex: 1; /* Take up half of the screen */
+    background-image: url('../images/login.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+}
+
+.admin-login-form-container {
+    flex: 1; /* Take up half of the screen */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 20px; /* Add some padding */
+}
+
+.admin-login-heading {
+    margin-bottom: 20px; /* Space between heading and form */
+    text-align: center; /* Center the heading */
+    font-weight: bold; /* Bold font */
+}
+
+.form-label {
+    font-weight: bold; /* Bold labels */
+    color: #343a40; /* Dark text color */
+}
+
+input.form-control {
+    border-radius: 5px; /* Rounded corners for input fields */
+    border: 1px solid #ced4da; /* Light border */
+    padding: 10px; /* Padding inside input fields */
+    transition: border-color 0.2s; /* Smooth transition for border color */
+}
+
+input.form-control:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft blue glow */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside button */
+    transition: background-color 0.2s; /* Smooth transition for background color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+    .admin-login-container {
+        flex-direction: column; /* Stack columns on small screens */
+    }
+    
+    .admin-login-image {
+        height: 200px; /* Set a fixed height for the image on small screens */
+    }
+    
+    .admin-login-form-container {
+        height: auto; /* Let the form container adapt to content */
+    }
+
+    .admin-login-container {
+        display: flex;
+        height: 100vh; /* Full viewport height */
+        background-color: #f8f9fa; /* Light background color */
+    }
+    
+    .admin-login-image {
+        flex: 1; /* Take up half of the screen */
+        background-image: url('path/to/your/image.jpg'); /* Replace with your image path */
+        background-size: cover; /* Cover the entire area */
+        background-position: center; /* Center the image */
+    }
+    
+    .admin-login-form-container {
+        flex: 1; /* Take up half of the screen */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        padding: 20px; /* Add some padding */
+    }
+    
+    .admin-login-heading {
+        margin-bottom: 20px; /* Space between heading and form */
+        text-align: center; /* Center the heading */
+        font-weight: bold; /* Bold font */
+    }
+    
+    .form-label {
+        font-weight: bold; /* Bold labels */
+        color: #343a40; /* Dark text color */
+    }
+    
+    input.form-control {
+        border-radius: 5px; /* Rounded corners for input fields */
+        border: 1px solid #ced4da; /* Light border */
+        padding: 10px; /* Padding inside input fields */
+        transition: border-color 0.2s; /* Smooth transition for border color */
+    }
+    
+    input.form-control:focus {
+        border-color: #007bff; /* Blue border on focus */
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft blue glow */
+    }
+    
+    .btn-primary {
+        background-color: #007bff; /* Primary button color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px 20px; /* Padding inside button */
+        transition: background-color 0.2s; /* Smooth transition for background color */
+    }
+    
+    .btn-primary:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+    
+    @media (max-width: 768px) {
+        .admin-login-container {
+            flex-direction: column; /* Stack columns on small screens */
+        }
+        
+        .admin-login-image {
+            height: 200px; /* Set a fixed height for the image on small screens */
+        }
+        
+        .admin-login-form-container {
+            height: auto; /* Let the form container adapt to content */
+        }
+    }
+    
+}

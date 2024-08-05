@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.register-container {
+  display: flex;
+  height: 100vh;
+  background-color: #ECEFF1; /* Snowy gray background color */
+}
+
+.register-image {
+  flex: 1;
+  background-image: url('../images/org.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.register-form-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.register-form {
+  width: 80%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.3); /* Slightly opaque background for glassmorphism */
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Transparent border */
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Subtle shadow for depth */
+  backdrop-filter: blur(8px); /* Blur effect for glassmorphism */
+  -webkit-backdrop-filter: blur(8px); /* Blur effect for Safari */
+}
+
+.register-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: darkblue; /* Change the heading color to dark blue */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Adjust the spacing between form groups */
+}
+
+.form-label {
+  display: block; /* Make labels block elements to stack them above inputs */
+  margin-bottom: 5px; /* Space between the label and input */
+  color: black;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Add spacing below the checkbox */
+}
+
+.form-check-input {
+  margin-right: 10px; /* Space between checkbox and label */
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  color: #f5efef;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+.admin-login-button {
+  position: absolute; /* Position it absolutely within the container */
+  top: 20px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  z-index: 10; /* Ensure it's above other elements */
+}
+
+.admin-login-button .btn {
+  background-color: #003366; /* Dark blue color */
+  color: #ffffff; /* White text color */
+  font-size: 0.7rem; /* Smaller font size */
+  padding: 5px 10px; /* Reduced padding for smaller button */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* Remove default border */
+}
+
+.admin-login-button .btn:hover {
+  background-color: #0056b3; /* Slightly lighter blue on hover */
+}
+
+.btn-primary:hover {
+  background-color: #4d77a6;
+}
+
+.already-text {
+  font-size: 0.8rem; /* Smaller text size */
+  margin-top: 10px;
+  color: #555;
+  text-align: center;
+}
+
+.login-link {
+  color: #0056b3;
+  text-decoration: underline;
+  cursor: pointer;
+}
