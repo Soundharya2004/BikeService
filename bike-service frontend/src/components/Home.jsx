@@ -13,7 +13,10 @@ const Home = () => {
         navigate('/booking-status'); 
     };
 
-    
+    const handleLogout = () => {
+        setUserEmail(''); // Clear user email on logout
+        navigate('/register'); // Redirect to register page
+    };
 
     return (
         <div className="home-container">
@@ -30,7 +33,12 @@ const Home = () => {
                     <Link to="/previous-bookings" className="highlight-text">
                         View Previous Bookings
                     </Link>
-                    
+                    <span 
+                        className="highlight-text" 
+                        onClick={handleLogout}
+                    >
+                        Logout
+                    </span>
                 </div>
             </nav>
             <img src={homeImage} alt="Bike Service" className="home-image" />
