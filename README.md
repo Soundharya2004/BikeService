@@ -1,120 +1,110 @@
-# fzone - Bike Service Application
+# Bike Service Application - Fzone
 
 ## Overview
 
-**fzone** is a comprehensive bike service application tailored for bike service station owners and their customers. It allows owners to manage services and bookings effectively while providing a user-friendly interface for customers to book services and monitor their statuses.
+Fzone is a bike service application designed for bike service station owners and their customers. The application allows owners to manage their services, receive notifications for bookings, and keep track of booking statuses. Customers can register, book services, and receive email notifications regarding their bookings.
 
 ## Features
 
-### For Service Owners:
-- **Service Management:** Create, edit, and delete services.
-- **Booking Management:** View and manage all bookings (pending, ready for delivery, completed).
-- **Notification System:** Receive email notifications for new bookings.
+### Bike Station Owner Features:
+- Create, edit, and delete services.
+- View a list of all bookings (pending, ready for delivery, and completed).
+- View details of each booking.
+- Mark a booking as ready for delivery.
+- Mark a booking as completed.
+- Receive email notifications whenever a booking is made.
 
-### For Customers:
-- **Account Registration:** Register using an email address and mobile number.
-- **Service Booking:** Book services for specific dates.
-- **Booking Tracking:** View the status of current and past bookings.
-- **Email Notifications:** Receive notifications when their bike is ready for delivery.
+### Customer Features:
+- Register for an account using an email address and mobile number.
+- Book a service at a specific date.
+- View the status of current and previous bookings.
+- Receive an email notification when the booking is ready for delivery.
 
-## Technologies Used
+## Technology Stack
 
-- **Frontend:** 
-  - React
-  - Vite
-  
-- **Backend:** 
-  - Node.js
-  - Express.js
-  - MySQL
-  - Bcrypt
-  - Body-Parser
-  - CORS
-  - Dotenv
-  - Nodemon
+- **Frontend**: React + Vite
+- **Backend**: Node.js + Express.js
+- **Database**: MySQL
 
-## Installation and Running the Project
+## Installation
 
 ### Prerequisites
 
-Ensure you have the following installed:
+- Node.js (v14 or later)
+- MySQL
+- Git
 
-- [Node.js](https://nodejs.org/) (version 14 or later)
-- [MySQL](https://www.mysql.com/) (for backend database)
-- [NPM](https://www.npmjs.com/) (comes with Node.js)
+### Setup Instructions
 
-### Backend Setup
+1. **Clone the repository:**
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/Soundharya2004/cartrabbit-task.git
-   cd bikeservice-backend
+   ```
+   git clone https://github.com/Soundharya2004/bike-service.git
+   cd bike-service
    ```
 
-2. Install backend dependencies:
+2. **Install the backend dependencies:**
 
-   ```bash
+   Navigate to the backend directory and run:
+
+   ```
+   cd bikeservice-backend
    npm install
    ```
 
-3. Create a `.env` file in the root of the `bikeservice-backend` directory with the following variables:
+3. **Set up the environment variables:**
 
-   ```plaintext
-   DB_HOST=your_database_host
-   DB_USER=your_database_user
-   DB_PASSWORD=your_database_password
+   Create a `.env` file in the `bikeservice-backend` directory and add the following variables:
+
+   ```
+   DB_HOST=your_mysql_host
+   DB_USER=your_mysql_user
+   DB_PASSWORD=your_mysql_password
    DB_NAME=your_database_name
    ```
 
-4. Start the backend server:
+4. **Install the frontend dependencies:**
 
-   ```bash
-   npm start
+   Navigate to the frontend directory and run:
+
    ```
-
-### Frontend Setup
-
-1. Open a new terminal window and navigate to the `frontend` directory:
-
-   ```bash
-   cd bike-service frontend
-   ```
-
-2. Install frontend dependencies:
-
-   ```bash
+   cd bike-servie frontend
    npm install
    ```
 
-3. Start the development server:
+5. **Run the backend server:**
 
-   ```bash
+   ```
+   cd bikeservice-backend
+   npm start
+   ```
+
+6. **Run the frontend development server:**
+
+   Open a new terminal, navigate to the frontend directory, and run:
+
+   ```
+   cd bike-service frontend
    npm run dev
    ```
 
-4. Open your browser and go to `http://localhost:5173` to access the application.
+## Admin Login Credentials
+
+To log in as an admin, use the following credentials:
+
+- **Email**: admin@gmail.com
+- **Password**: admin@123
 
 ## Usage
 
-- **Service Owners:** Log in to the admin dashboard to manage services and bookings. Use the provided forms for creating, editing, or deleting services.
-- **Customers:** Register for an account, log in, and book services. Monitor booking status through the dashboard.
+1. Open your web browser and go to `http://localhost:5173` (or the appropriate port where your frontend is running).
+2. You can access the admin login page using the credentials provided above.
+3. As a customer, you can register for an account, book services, and check the status of your bookings.
 
-## API Endpoints
+## Contributing
 
-### User Endpoints
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or have suggestions for improvements.
 
-- `POST /user/register` - Register a new user.
-- `POST /user/login` - Log in a user.
-
-
-### Booking Endpoints
-
-- `POST /api/bookings` - Create a new booking.
-- `GET /api/all-bookings` - Retrieve all bookings.
-- `PUT /api/bookings/:id` - Update the status of a booking.
-
-## Conclusion
-
-The **fzone** application offers an efficient solution for bike service owners to manage their services and bookings, while providing customers with a seamless experience. Leveraging modern technologies such as React, Node.js, and MySQL, it is built to be scalable and maintainable.
-
+### Notes:
+- Make sure to replace the `DB_HOST`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME` placeholders in the `.env` file instructions with your actual database configuration.
+- Adjust any other sections as needed to better fit your project specifics!
