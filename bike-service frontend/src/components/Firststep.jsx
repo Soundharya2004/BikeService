@@ -3,7 +3,7 @@ import { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from './UserContext';
-import './FirstStep.css';
+import './Firststep.css';
 import url from '../api/url';
 import emailjs from 'emailjs-com';
 
