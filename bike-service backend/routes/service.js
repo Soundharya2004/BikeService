@@ -40,7 +40,24 @@ module.exports = (db) => {
             res.json(results[0]);
         });
     });
-
+    router.delete('/services/:id', (req, res) => {
+        const serviceId = req.params.id;
+    
+        db.query('DELETE FROM Services WHERE serviceId = ?', [serviceId], (err, results) => {
+            if (err) {
+                return res.status(500).json({ message: 'Database error' });
+            }
+    
+            // Check if any row was affected (i.e., deleted)
+            if (results.affectedRows === 0) {
+                return res.status(404).json({ message: 'Service not found' });
+            }
+    
+            // If deletion was successful, return a success message
+            res.json({ message: 'Service deleted successfully' });
+        });
+    });
+    
     // Route to update a service by ID
     router.put('/services/:id', (req, res) => {
         const serviceId = req.params.id;

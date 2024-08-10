@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import emailjs from 'emailjs-com';
 import './ServiceBookings.css';
 import url from '../api/url';
-
-const RESEND_API_KEY = 're_6hp1hYt9_DBE6czhGYu1uvN6Kj36GHFeg'; // Replace with your actual API key
 
 const ServiceBookings = () => {
     const [bookings, setBookings] = useState([]);
@@ -49,29 +48,25 @@ const ServiceBookings = () => {
             });
     };
 
-    const sendEmail = async (email, bookingId) => {
-        const res = await fetch('https://api.resend.com/emails', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${RESEND_API_KEY}`,
-            },
-            body: JSON.stringify({
-                from: 'rsoundharya03@gmail.com', // Replace with your sending email
-                to: [email],
-                subject: 'Booking Status Updated',
-                html: `<strong>Your booking with ID ${bookingId} is now marked as completed. Thank you for choosing our service!</strong>`,
-            }),
-        });
-
-        if (res.ok) {
-            const data = await res.json();
-            console.log('Email sent successfully:', data);
-            alert('Email sent successfully!');
-        } else {
-            console.error('Error sending email:', res.statusText);
-        }
+    const sendEmail = async (bookingId ,fullname , email) => {
+        const templateParams = {
+            to_name : fullname,
+            from_name : 'Admin',
+            user_email: email,
+            booking_id: bookingId,
+            message: `Hello ${fullname} ,Your booking with ID ${bookingId} is now marked as completed. Thank you for choosing our service! If you have any questions, please feel free to contact us.`,
+        };
+    
+        emailjs.send('service_gc8a5it', 'template_qrwbwwl', templateParams, '7vWW8UnGD34a4T4KS')
+            .then((response) => {
+                console.log('Email sent successfully:', response.status, response.text);
+                alert('Email sent successfully!');
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+            });
     };
+    
 
     return (
         <div className="service-bookings">
@@ -100,7 +95,7 @@ const ServiceBookings = () => {
                                             <option value="completed">Completed</option>
                                         </select>
                                         <br />
-                                        <button className="btn btn-success ml-2" onClick={() => handleSave(booking.id, booking.email)}>Save</button>
+                                        <button className="btn btn-success ml-2" onClick={() => handleSave(booking.id,booking.fullname, booking.email)}>Save</button>
                                         <button className="btn btn-secondary ml-2" onClick={() => setEditingBooking(null)}>Cancel</button>
                                     </div>
                                 ) : (

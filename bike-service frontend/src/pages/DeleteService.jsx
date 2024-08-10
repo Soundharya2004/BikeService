@@ -1,11 +1,14 @@
 import React from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const DeleteService = ({ serviceId }) => {
+    const navigate = useNavigate();
     const handleDelete = async () => {
         try {
-            const response = await axios.delete(`https://bikeservice-1.onrender.com/api/v1/products/${serviceId}`);
+            const response = await axios.delete(`${url}/admin/services/${serviceId}`);
             console.log('Service deleted:', response.data);
+            navigate('/dashboard');
            
         } catch (error) {
             console.error('Error deleting service:', error);

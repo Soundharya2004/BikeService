@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from './UserContext';
 import './FirstStep.css';
 import url from '../api/url';
-
-const RESEND_API_KEY = 're_6hp1hYt9_DBE6czhGYu1uvN6Kj36GHFeg'; // Replace with your actual API key
+import emailjs from 'emailjs-com';
 
 const FirstStep = () => {
     const [fullname, setFullName] = useState('');
@@ -39,31 +38,17 @@ const FirstStep = () => {
     };
 
     const sendEmailToAdmin = async (bookingDetails) => {
-        const emailData = {
-            from: 'admin@example.com', // Admin email address
-            to: ['admin@example.com'], // Add admin's email
-            subject: 'New Booking Notification',
-            html: `<strong>A new booking has been created:</strong><br>Details: ${JSON.stringify(bookingDetails)}`,
+        const templateParams = {
+            to_name: 'Admin',
+            from_name: 'Booking Service',
+            message: `A new booking has been created:\nFull Name: ${bookingDetails.fullname}\nEmail: ${bookingDetails.emailid}\nMobile: ${bookingDetails.mobile}\nBike Model: ${bookingDetails.model}\nService: ${bookingDetails.service}\nBooking Date: ${bookingDetails.bookingDate}`,
         };
 
         try {
-            const res = await fetch('https://api.resend.com/emails', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${RESEND_API_KEY}`,
-                },
-                body: JSON.stringify(emailData),
-            });
-
-            if (res.ok) {
-                const data = await res.json();
-                console.log('Admin email sent successfully:', data);
-            } else {
-                console.error('Error sending admin email:', res.statusText);
-            }
+            const result = await emailjs.send('service_gc8a5it', 'template_52al0oe', templateParams, '7vWW8UnGD34a4T4KS');
+            console.log('Email sent successfully:', result.text);
         } catch (error) {
-            console.error('Error in sending email to admin:', error);
+            console.error('Error sending email:', error);
         }
     };
 
