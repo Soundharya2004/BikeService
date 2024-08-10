@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../pages/CreateService.css';
-
+import url from '../api/url';
 const CreateService = () => {
     const navigate = useNavigate(); // Initialize useNavigate for navigation
     const [serviceId, setServiceId] = useState('');
@@ -13,7 +13,7 @@ const CreateService = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://bikeservice-1.onrender.com/api/v1/products', {
+            const response = await axios.post(`${url}/admin/services`, {
                 serviceId,
                 name,
                 description,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './EditProduct.css';
+import url from '../api/url';
 
 const EditProduct = () => {
     const { productId } = useParams(); // Get productId from URL params
@@ -16,7 +17,7 @@ const EditProduct = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`https://bikeservice-1.onrender.com/api/v1/products/${productId}`);
+                const response = await axios.get(`${url}/admin/services/${productId}`);
                 setProduct(response.data);
             } catch (error) {
                 console.error('Error fetching product:', error);
@@ -37,7 +38,7 @@ const EditProduct = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://bikeservice-1.onrender.com/api/v1/products/${productId}`, product);
+            await axios.put(`${url}/admin/services/${productId}`, product);
             setAlertMessage('Service edited successfully!');
         } catch (error) {
             console.error('Error updating product:', error);
