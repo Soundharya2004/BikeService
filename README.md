@@ -101,9 +101,6 @@ To log in as an admin, use the following credentials:
 2. You can access the admin login page using the credentials provided above.
 3. As a customer, you can register for an account, book services, and check the status of your bookings.
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or have suggestions for improvements.
 
 ### Notes:
 - Make sure to replace the `DB_HOST`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME` placeholders in the `.env` file instructions with your actual database configuration.

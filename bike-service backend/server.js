@@ -32,9 +32,13 @@ db.connect((err) => {
 
 const userRouter = require('./routes/userRoutes')(db);
 const bookings=require('./routes/booking')(db);
+const services=require('./routes/service')(db);
+
 
 app.use('/user', userRouter);
 app.use('/api',bookings);
+app.use('/admin',services);
+
 // Sample endpoint
 app.get('/', (req, res) => {
     res.send('Hello from Node.js server with MySQL!');
