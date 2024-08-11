@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from './UserContext';
@@ -14,26 +14,45 @@ const FirstStep = () => {
     const [model, setModel] = useState('');
     const [service, setService] = useState('');
     const [bookingDate, setBookingDate] = useState('');
+    const [servicesList, setServicesList] = useState([]); // State for services
     const { setUserEmail, setBookingData } = useContext(UserContext);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        fetchServices(); // Fetch services on component mount
+    }, []);
+
+    const fetchServices = async () => {
+        try {
+            const response = await axios.get(`${url}/admin/get-services`);
+            setServicesList(response.data); // Update services list
+        } catch (error) {
+            console.error('Error fetching services:', error);
+        }
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         const bookingDetails = { fullname, emailid, mobile, model, service, bookingDate };
+        console.log('Booking details:', bookingDetails); // Log booking details
+
         try {
             const result = await axios.post(`${url}/api/bookings`, bookingDetails);
+            console.log('API Response:', result); // Log the API response
+
             if (result.data === "Already registered") {
                 alert("You are already registered");
             } else {
                 alert("Registered successfully! Get ready for top-notch service!");
                 await sendEmailToAdmin(bookingDetails); // Send email to admin
             }
+
             setUserEmail(emailid);
             setBookingData(bookingDetails);
             navigate('/booking-status');
         } catch (err) {
-            console.log(err);
+            console.log('Error:', err); // Log the error
         }
     };
 
@@ -134,9 +153,9 @@ const FirstStep = () => {
                             required
                         >
                             <option value="" disabled>Select Service</option>
-                            <option value="General service check-up">General service check-up</option>
-                            <option value="Oil change">Oil change</option>
-                            <option value="Water wash">Water wash</option>
+                            {servicesList.map((service) => (
+                                <option key={service.id} value={service.name}>{service.name}</option>
+                            ))}
                         </select>
                     </div>
                     <div className="mb-3">

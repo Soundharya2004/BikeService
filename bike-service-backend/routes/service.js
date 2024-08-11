@@ -19,7 +19,7 @@ module.exports = (db) => {
     // API endpoint to retrieve all services
     router.get('/services', (req, res) => {
         db.query('SELECT * FROM Services', (err, results) => {
-            if (err) {
+            if (err) { 
                 return res.status(500).json({ message: 'Database error' });
             }
             res.json(results);
@@ -74,6 +74,14 @@ module.exports = (db) => {
             res.json({ message: 'Service updated successfully' });
         });
     });
-
+    //retreiving services 
+    router.get('/get-services', (req, res) => {
+        db.query('SELECT * FROM Services', (err, results) => {
+            if (err) { 
+                return res.status(500).json({ message: 'Database error' });
+            }
+            res.json(results);
+        });
+    }); 
     return router;
 };
